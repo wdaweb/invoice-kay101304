@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php include "./include/header.php" ;?> </title>
+    <title><?php include "./include/title.php" ;?> </title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
 <form action="save_invoice.php" method="post">
 期別：
-<select name="preiod" >
+<select name="period" >
     <option value="1">1．2</option>
     <option value="2">3．4</option>
     <option value="3">5．6</option>
@@ -31,10 +31,9 @@
 獎號：
     <input type="text" name="code">
     <input type="text" name="number">
-    <input type="submit" value="儲存">
     <br>
 花費：
-    <input type="number" name="spend">
+    <input type="number" name="expend">
     <input type="submit" value="儲存">
     <br>
 </form>
