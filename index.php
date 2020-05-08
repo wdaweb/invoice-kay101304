@@ -1,4 +1,4 @@
-<?php include_once "base.php"; ?>
+<?php include_once "./include/base.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+<?php include "./include/header.php"; ?>
 
+<form action="save_invoice.php" method="post">
+期別：
+<select name="preiod" >
+    <option value="1">1．2</option>
+    <option value="2">3．4</option>
+    <option value="3">5．6</option>
+    <option value="4">7．8</option>
+    <option value="5">9．10</option>
+    <option value="6">11．12</option>
+</select>
+<br>
+年份：
+<select name="year">
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    <option value="2022">2022</option>
+</select>
+<br>
+獎號：
+    <input type="text" name="code">
+    <input type="text" name="number">
+    <input type="submit" value="儲存">
+    <br>
+花費：
+    <input type="number" name="spend">
+    <input type="submit" value="儲存">
+    <br>
+</form>
 </body>
 </html>
