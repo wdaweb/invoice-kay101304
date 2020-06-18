@@ -1,1 +1,2 @@
-<div class="topbar"><?=$pageheader;?></div>
+<div class="topbar"><?=$pageheader;?>
+</div>

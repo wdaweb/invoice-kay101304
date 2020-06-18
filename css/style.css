@@ -2,9 +2,52 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    color: white;
+    
+}
+body{
+    font-family: Arial, "Microsoft JhengHei";
+    background-color: #343a40;
+    color: lightcyan;
+
+    
 }
 .topbar{
     height:50px;
     border-bottom:1px solid #999;
     box-shadow:0 0 5px #ccc;
+}
+button{
+    color: white;
+    /* background-color: #343a40; */
+}
+table{ 
+    text-align: center;
+    vertical-align:middle;
+    color: white;
+    widows: 70%;
+    height:70%;
+}
+.div>form{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:70%;
+        height:70%;
+        /* border:1px solid #ccc; */
+}
+
+input{
+    color: white;
+    background-color: #343a40;
+}
+
+.invoice-table{
+    border-collapse: collapse;
+    border: 1px solid #999;
+}
+.invoice-table td,th{
+    border: 1px solid #999;
+    padding:5px;
+    text-align: center;
 }

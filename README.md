@@ -45,7 +45,7 @@
 2. 獎號資料表- award_number
    - id
    - period
-   - item
+   - type
    - number
    - year
 3. 中獎紀錄表- reward_record
