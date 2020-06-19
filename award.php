@@ -15,7 +15,7 @@
 $pageheader= "AWARD PAGE";
 include "./layout/topbar.php"; 
 if(empty($_GET)){
-    echo "<br>"."請選擇要對獎的項目<a href='query.php'>各期獎號</a><br>";
+    echo "請選擇要對獎的項目<a href='query.php'>各期獎號</a><br>";
     
     $period=ceil(date("n")/2);
 
@@ -40,7 +40,9 @@ if(empty($_GET)){
     $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);//多筆
     
     ?>
-    <table class="table table-striped table-dark shadow-lg p-3 mb-5 rounded">
+    <br>
+    <div class="container">
+    <table class="invoice-table table table-striped table-dark shadow-lg p-3 mb-5 rounded ">
     
         <tr>
             <td>年月</td>
@@ -117,7 +119,8 @@ if(empty($_GET)){
             </td>
             <td><a href="award.php?aw=9&year=<?=$year;?>&period=<?=$period;?>">對獎</a></td>
         </tr>
-    </table>
+    </>
+    </div>
 <?
     exit();
 }
