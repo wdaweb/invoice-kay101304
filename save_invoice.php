@@ -1,10 +1,23 @@
 <?php
 include "./include/base.php";
 
-$sql="insert into invoice (`period`,`year`,`code`,`number`,`expend`) values('".$_POST['period']."','".$_POST['year']."','".strtoupper($_POST['code'])."','".$_POST['number']."','".$_POST['expend']."')";
+$table="invoice";
+$id=$_GET['id'];
 
-$res=$pdo->exec($sql);
+if(!empty($_GET['id'])){
+    $id=$_GET['id'];
+    $del="delete from `$table` where `id`= '$id' ";
+        $resd=$pdo->exec($del);
+    }
+    
+    $data=[
+    'period'=>$_POST['period'],
+    'year'=>$_POST['year'],
+    'code'=>$_POST['code'],
+    'number'=>$_POST['number'],
+    'expend'=>$_POST['expend'],
+    ];
+    $res=save($table,$data);
 
 to("list.php");
-
-?>
+ ?>

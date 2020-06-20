@@ -42,16 +42,18 @@ $year=date("Y")-1911;
   </ul>
 </nav>
 
-
+<form action="index.php?id=<?=$row['id'];?>" method="post">
+<table class="table table-striped table-dark shadow-lg p-3 mb-5 rounded">
 <?php
-$period=$period-1;
+
 if(!empty($_GET['year'])){
     $rows=all('invoice',['year'=>$year]);
 }else{
 $rows=all('invoice',['period'=>$period]);
 }
 ?>
-<table class="table table-striped table-dark shadow-lg p-3 mb-5 rounded">
+
+
     <tr>
       <th scope="col">#</th>
       <th scope="col">期數</th>
@@ -65,21 +67,22 @@ $rows=all('invoice',['period'=>$period]);
   <tbody>
     <?php
     foreach($rows as $row){
-        echo "<tr>";
-        echo "    <th scope='row'>".$row['id']."</th>";
-        echo "    <td>".$row['period']."</td>";
-        echo "    <td>".$row['year']."</td>";
-        echo "    <td>".$row['code']."</td>";
-        echo "    <td>".$row['number']."</td>";
-        echo "    <td>".$row['expend']."</td>";
-        echo "    <td>";
-        echo "<a href='invoice.php?id=".$row['id']."'><button type='button' class='btn btn-outline-light'>編輯</button></a>";
-        echo "<a href='list.php?id=".$row['id']."'><button type='button' class='btn btn-outline-light'>刪除</button></a>";
-        echo "</td>";
-        echo "</tr>";
+      echo "<tr>";
+      echo "    <th scope='row' value=>".$row['id']."</th>";
+      echo "    <td>".$row['period']."</td>";
+      echo "    <td>".$row['year']."</td>";
+      echo "    <td>".$row['code']."</td>";
+      echo "    <td>".$row['number']."</td>";
+      echo "    <td>".$row['expend']."</td>";
+      echo "    <td>";
+      echo "<a href='index.php?id=".$row['id']."'><button type='button' class='btn btn-outline-light' name='edit'>編輯</button></a>";
+      echo "<a href='del.php?id=".$row['id']."'><button type='button' class='btn btn-outline-light' name='del'>刪除</button></a>";
+      echo "</td>";
+      echo "</tr>";
     }
     ?>
 </table>
+</form>
 </div>
     <script src=".css/jquery-3.5.0.min.js"></script>
     <script src=".css/bootstrap.bundle.min.js"></script>

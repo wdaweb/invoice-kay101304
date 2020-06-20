@@ -13,16 +13,20 @@
 $pageheader= "INSTER INVOICE";
 include "./layout/topbar.php"; 
 
+if(!empty($_GET['id'])){
+    $id=$_GET['id'];
+}
+
 $year=date("Y")-1911;
 $period=ceil(date("n")/2);
 echo "現在是 " . $year . "年" . date("n") . "月 第 " . $period . " 期";
 ?>
 <br>
 <br>
-<form action="save_invoice.php" method="post" >
+<form action="save_invoice.php?id=<?=$id;?>" method="post" >
 
 <th scope="col">期別：</th>
-<select class=" bg-dark" name="period" >
+<select class=" bg-dark text-white" name="period" >
     <option value="1">1/2月</option>
     <option value="2" selected="true">3/4月</option>
     <option value="3" >5/6月</option>
@@ -40,6 +44,7 @@ echo "現在是 " . $year . "年" . date("n") . "月 第 " . $period . " 期";
 </select>
 <br>
 <th scope="col">發票號碼：</th>
+<input type="hidden" name="id" value="">
     <input  type="text" name="code" maxlength="2"> 
     <input onkeyup="value=value.replace(/[^\d]/g,'') "
 　　 onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"

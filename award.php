@@ -31,7 +31,7 @@ if(empty($_GET)){
     if(isset($_GET['period'])){
         $period=$_GET['period'];
     }
-    
+    $period=$period-1;
     $year=date("Y")-1911;
     
     $num1=find('award_number',['period'=>$period,'year'=>$year,'type'=>1]); //單筆
